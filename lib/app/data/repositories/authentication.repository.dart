@@ -1,4 +1,4 @@
-import '../models/authenticate_model.dart';
+import '../models/authenticate.model.dart';
 import '../providers/authentication.provider.dart';
 import '../providers/cache_manager.provider.dart';
 

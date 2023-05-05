@@ -43,7 +43,7 @@ class FormLoginWidget extends GetWidget<LoginController> {
                     TextFormField(
                       controller: controller.usernameController,
                       decoration: InputDecoration(
-                        labelText: 'Usuário',
+                        labelText: 'User',
                         suffixIcon: Icon(
                           Icons.person,
                           color: Colors.grey[600],
@@ -51,7 +51,7 @@ class FormLoginWidget extends GetWidget<LoginController> {
                       ),
                       validator: (String? value) {
                         if (value!.isEmpty) {
-                          return 'Obrigatório';
+                          return 'Mandatory';
                         }
                         return null;
                       },
@@ -62,7 +62,7 @@ class FormLoginWidget extends GetWidget<LoginController> {
                         controller: controller.passwordController,
                         obscureText: controller.hidePassword,
                         decoration: InputDecoration(
-                          labelText: 'Senha',
+                          labelText: 'Password',
                           suffixIcon: IconButton(
                             icon: controller.iconShowPassword,
                             color: Colors.grey[600],
@@ -71,7 +71,7 @@ class FormLoginWidget extends GetWidget<LoginController> {
                         ),
                         validator: (String? value) {
                           if (value!.isEmpty) {
-                            return 'Obrigatório';
+                            return 'Mandatory';
                           }
                           return null;
                         },
@@ -96,7 +96,7 @@ class FormLoginWidget extends GetWidget<LoginController> {
                             width: 25,
                           )
                         : Text(
-                            'ENTRAR',
+                            'Login',
                             style: GoogleFonts.sourceSansPro(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,

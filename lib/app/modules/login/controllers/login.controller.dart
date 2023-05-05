@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/utils/widgets/app_alert/snackbar_widget.dart';
-import '../../../data/models/authenticate_model.dart';
+import '../../../data/models/authenticate.model.dart';
 import '../../../data/repositories/authentication.repository.dart';
 import '../../../routes/app_pages.dart';
 
@@ -54,9 +54,9 @@ class LoginController extends GetxController {
           Get.offAndToNamed(Routes.HOME);
         } else {
           _alert.alertError(
-            title: 'Não foi possivel fazer o login!',
+            title: 'Unable to login!',
             description:
-                'Tente fazer o login novamente, caso ainda não consiga tente novamente mais tarde.',
+                'Try logging in again, if you still cant try again later.',
           );
         }
       }).catchError((e) {
@@ -66,8 +66,8 @@ class LoginController extends GetxController {
         _passwordController.value.clear();
 
         _alert.alertError(
-          title: 'Usuário/Senha inválido',
-          description: 'Tente novamente com um usuário e senha validos!',
+          title: 'Invalid User/Password',
+          description: 'Try again with a valid username and password!',
         );
       });
     }

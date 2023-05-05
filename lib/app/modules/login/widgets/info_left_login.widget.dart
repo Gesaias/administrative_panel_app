@@ -1,9 +1,9 @@
-import 'package:administrative_panel_app/app/core/utils/getcolorfromhex.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/themes/app_colors.dart';
+import '../../../core/utils/getcolorfromhex.dart';
 
 class InfoLeftLoginWidget extends GetWidget {
   const InfoLeftLoginWidget({
@@ -67,7 +67,7 @@ class InfoLeftLoginWidget extends GetWidget {
             ),
           ),
           SelectableText(
-            'Painel Administrativo para Controle de Aeroportos',
+            'Administrative Panel for Airport Control',
             textAlign: TextAlign.center,
             style: GoogleFonts.sourceSansPro(
               decoration: TextDecoration.none,
@@ -85,7 +85,7 @@ class InfoLeftLoginWidget extends GetWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SelectableText(
-                    'Bem Vindo(a) de volta!',
+                    'Welcome back!',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.sourceSansPro(
                       decoration: TextDecoration.none,
@@ -96,7 +96,7 @@ class InfoLeftLoginWidget extends GetWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 12.0),
                     child: SelectableText(
-                      'Nosso propósito é promover experiências inesquecíveis ',
+                      'Our purpose is to promote unforgettable experiences ',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.sourceSansPro(
                         decoration: TextDecoration.none,
@@ -109,7 +109,7 @@ class InfoLeftLoginWidget extends GetWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 12.0),
                     child: SelectableText(
-                      'Somos apaixonados em desenvolver produtos e serviços que permitem aos nossos clientes viajar por um preço  justo, de forma segura e com as melhores parcerias',
+                      'We are passionate about developing products and services that allow our customers to travel at a fair price, safely and with the best partnerships.',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.sourceSansPro(
                         fontSize: 14,
@@ -125,7 +125,7 @@ class InfoLeftLoginWidget extends GetWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 16.0),
             child: SelectableText(
-              '#DePromoVocêPode',
+              '#DePromoYouCan',
               textAlign: TextAlign.center,
               style: GoogleFonts.sourceSansPro(
                 decoration: TextDecoration.none,

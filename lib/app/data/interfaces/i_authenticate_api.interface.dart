@@ -1,4 +1,4 @@
-import '../models/authenticate_model.dart';
+import '../models/authenticate.model.dart';
 
 abstract class IAuthenticateApi {
   Future<Authenticate?> login(Map<String, dynamic> data);

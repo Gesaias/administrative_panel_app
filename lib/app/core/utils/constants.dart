@@ -14,4 +14,7 @@ class EndPoints {
 
   static String user = 'user/';
   static String userToken = '${user}token';
+
+  static String airport = 'airport/';
+  static String airportAlterStatus = '${airport}alter_status/';
 }

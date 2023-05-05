@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../core/utils/constants.dart';
 import '../api/exceptions/rest_exception.dart';
 import '../interfaces/i_authenticate_api.interface.dart';
-import '../models/authenticate_model.dart';
+import '../models/authenticate.model.dart';
 import '../services/rest_client.service.dart';
 
 class AuthenticateProvider implements IAuthenticateApi {

@@ -30,7 +30,7 @@ class SplashErrorWidget extends GetWidget<SplashController> {
               ),
             ),
             Text(
-              'Desculpe, houve um erro.',
+              'Sorry, there was an error.',
               style: GoogleFonts.sourceSansPro(
                 color: Colors.white,
                 fontWeight: FontWeight.w800,
