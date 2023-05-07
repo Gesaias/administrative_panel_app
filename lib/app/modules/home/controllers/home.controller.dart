@@ -1,9 +1,10 @@
-import 'package:administrative_panel_app/app/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../core/themes/app_colors.dart';
 import '../../../core/utils/widgets/app_alert/snackbar_widget.dart';
+import '../../../core/utils/widgets/loading/loading_elevated_button.widget.dart';
 import '../../../data/api/exceptions/rest_exception.dart';
 import '../../../data/enum/e_airports_status.enum.dart';
 import '../../../data/models/airport.model.dart';
@@ -18,8 +19,9 @@ class HomeController extends GetxController {
   SnackbarAlertWidget alert = SnackbarAlertWidget();
 
   final RxBool _isLoading = false.obs;
+  final RxBool _isLoadingSaveDescription = false.obs;
 
-  final RxList<AirportModel> _airports = <AirportModel>[].obs;
+  final Rx<List<AirportModel>> _airports = Rx<List<AirportModel>>([]);
 
   TextEditingController descriptionController = TextEditingController();
 
@@ -48,7 +50,8 @@ class HomeController extends GetxController {
             maxLength: 150,
             maxLines: 4,
             decoration: InputDecoration(
-                hintText: _airports.value[index].descriptionStatus),
+              hintText: _airports.value[index].descriptionStatus,
+            ),
           ),
         ),
         actions: [
@@ -92,6 +95,8 @@ class HomeController extends GetxController {
                 backgroundColor: Colors.green[700],
               ),
               onPressed: () async {
+                _setIsLoadingDescription();
+
                 await airportsRepository.alterStatus(
                   int.parse(value),
                   id,
@@ -100,14 +105,21 @@ class HomeController extends GetxController {
                   },
                 ).then((int status) async {
                   await _getAllAirports();
+                  descriptionController.clear();
+
                   Get.back();
+                  _setIsLoadingDescription();
                 });
               },
-              child: Text(
-                'Save',
-                style: GoogleFonts.sourceSansPro(
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Obx(
+                () => _isLoadingSaveDescription.value
+                    ? LoadingElevatedButtonWidget()
+                    : Text(
+                        'Save',
+                        style: GoogleFonts.sourceSansPro(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
               ),
             ),
           ),
@@ -137,6 +149,7 @@ class HomeController extends GetxController {
         },
       ).then((int status) async {
         await _getAllAirports();
+        descriptionController.clear();
       });
     }
   }
@@ -169,4 +182,6 @@ class HomeController extends GetxController {
   }
 
   void _setIsLoading() => _isLoading.value = !_isLoading.value;
+  void _setIsLoadingDescription() =>
+      _isLoadingSaveDescription.value = !_isLoadingSaveDescription.value;
 }
